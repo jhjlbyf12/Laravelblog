@@ -59,9 +59,6 @@
                 <textarea name="contentField" class="form-control" placeholder="Контент"></textarea>
             </div>
             <div class="mb-3">
-                <input name="author" type="text" class="form-control" placeholder="Автор">
-            </div>
-            <div class="mb-3">
                 <input type="submit" class="form-control btn btn-primary" value="Добавить статью">
             </div>
         </form>

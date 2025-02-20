@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::get('/article/{id}', [\App\Http\Controllers\ArticleController::class, 'showArticle']);
 Route::get('/addArticle', function (){
     return view('addArticle');
-});
+})->middleware('auth');
 Route::post('/addArticle', [\App\Http\Controllers\ArticleController::class, 'addArticle']);
 Route::get('/register', function (){
     return view('auth.register');

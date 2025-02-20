@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -10,7 +11,9 @@ class ArticleController extends Controller
     function addArticle(Request $request){
         $title = $request->title;
         $content = $request->contentField;
-        $author = $request->author;
+        $userId = auth()->user()->getAuthIdentifier();
+        $user = User::where('id', $userId)->first();
+        $author = $user->name;
         $article = new Article();
         $article->title = $title;
         $article->content = $content;
