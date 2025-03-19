@@ -19,9 +19,15 @@ Route::get('/', function () {
     return view('home', ['articles'=>$articles]);
 })->name('home');
 Route::get('/article/{id}', [\App\Http\Controllers\ArticleController::class, 'showArticle']);
+
 Route::get('/addArticle', function (){
     return view('addArticle');
 })->middleware('auth');
+
+Route::get('/commentArticle', function(){
+    return view('commentArticle');
+});
+
 Route::post('/addArticle', [\App\Http\Controllers\ArticleController::class, 'addArticle']);
 Route::get('/register', function (){
     return view('auth.register');

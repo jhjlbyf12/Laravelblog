@@ -20,11 +20,13 @@ class ArticleController extends Controller
         $article->author = $author;
         $article->save();
         return redirect()->intended('/');
+
     }
 
     function showArticle(Request $request){
         $articleId = $request->id;
         $article = Article::where('id', $articleId)->first();
         return view('article', ['article'=>$article]);
+
     }
 }

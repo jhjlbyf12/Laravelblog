@@ -59,6 +59,10 @@
                 Опубликовал: {{$article->author}}
             </p>
             <p>Дата публикации: {{$article->created_at}}</p>
+
+            <div class="mb-3">
+                <input type="submit" class="form-control btn btn-primary" value="Комментарий">
+            </div>
             <!-- Pager-->
             <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
         </div>
